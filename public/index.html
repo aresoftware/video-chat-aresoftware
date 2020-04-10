@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>ARESOFTWARE Video Char</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h1>Adventure</h1>
+        <div class="chat-container">
+            <input type="text" id="username" class="form-control" placeholder="name" required autofocus>
+            <span id="displayId"></span>
+        </div>
+    <div class="chat-container">
+        <input type="text" id="connId" class="form-control" placeholder="Enter connection Id" required>
+        <div>
+            <button id='conn_button' class="connet_button">Connect</button>
+            <button id='call_button' class="call_button">Call</button>
+        </div>
+    </div>
+    <div class="chat-container">
+            <video class="localVideo"  id="lvideo" autoplay="true" muted></video>
+            <video class="remoteVideo" id="rvideo" autoplay="true"></video>
+    </div>
+
+    <div class="chat-container">
+        <div id='chat-window'> 
+            <div id="output"></div>
+            <div id="actions"></div>
+        </div>
+        <input type="text" id="message" class="form-control" placeholder="enter a message" required>
+        <button id='button' class="send_button">Send</button>
+    </div>
+    <script src="socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/peerjs@0.3.20/dist/peer.min.js"></script>
+    <script src="client.js" charset="utf-8"></script>
+</body>
+</html>
