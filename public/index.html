@@ -5,36 +5,108 @@
     
     <title>ARESOFTWARE Video Char</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Adventure</h1>
-        <div class="chat-container">
-            <input type="text" id="username" class="form-control" placeholder="name" required autofocus>
-            <span id="displayId"></span>
+    <nav class = "navbar navbar-light bg-warning">
+        <a class="navbar-branch mx-auto" href="/">Adventure</a>
+    </nav>
+
+    <div class="container">
+        <div class="col-md-6 mt-4">
+            <div class="card" style="width: 100%;">
+                <input type="text" id="username" class="form-control" placeholder="name" required autofocus>
+            </div>    
+            <div class="card" style="width: 100%;">
+                <div class="card-header">
+                    <g4 id="displayId"></g4>
+                </div>
+                <div id="chat" class="card-body">
+                    
+                        <div class="chat-container">
+                            <div id="accordion2">
+                                <div class="card">
+                                  <div class="card-header" id="headingOne">
+                                    <h5 class="mb-0">
+                                      <button class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        see message
+                                      </button>
+                                    </h5>
+                                </div>
+                              
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <div id="output"></div>
+                                        <div id="actions"></div>
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <input type="text" id="message" class="form-control"   placeholder="enter a message" required>
+                                    <div class="input-group-append">
+                                        <button id='button' class="btn btn-warning">Send</button>
+                                    </div>
+                                </div>
+                        </div>
+                        <div data-spy="scroll"  data-offset="0"> 
+                </div>
+
+                <div id="video" class="card-body">
+                   
+                        <div class="chat-container">
+                            <input type="text" id="connId" class="form-control" placeholder="Enter connection Id" required>
+                            <div class="input-group">
+                                <button id='conn_button' class="btn btn-success btn-lg btn-block">Connect</button>
+                                <button id='call_button' class="btn btn-danger btn-lg btn-block">Call</button>
+                            </div>
+                        </div>
+                  
+                </div>
+                </div>
+            </div>
         </div>
-    <div class="chat-container">
-        <input type="text" id="connId" class="form-control" placeholder="Enter connection Id" required>
-        <div>
-            <button id='conn_button' class="connet_button">Connect</button>
-            <button id='call_button' class="call_button">Call</button>
         </div>
-    </div>
-    <div class="chat-container">
-            <video class="localVideo"  id="lvideo" autoplay="true" muted></video>
-            <video class="remoteVideo" id="rvideo" autoplay="true"></video>
     </div>
 
-    <div class="chat-container">
-        <div id='chat-window'> 
-            <div id="output"></div>
-            <div id="actions"></div>
+
+    <div id="accordion">
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+                Remote person
+              </button>
+            </h5>
+          </div>
+      
+          <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+                <video class="remoteVideo" id="rvideo" autoplay="true"></video>
+            </div>
+          </div>
         </div>
-        <input type="text" id="message" class="form-control" placeholder="enter a message" required>
-        <button id='button' class="send_button">Send</button>
-    </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+              <button class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseTwo">
+                Local person
+              </button>
+            </h5>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+                <video class="localVideo"  id="lvideo" autoplay="true" muted></video>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
     <script src="socket.io/socket.io.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/peerjs@0.3.20/dist/peer.min.js"></script>
     <script src="client.js" charset="utf-8"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>

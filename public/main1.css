@@ -39,7 +39,7 @@ body{
 }
 
 input{
-    padding: 10px 20px;
+    padding: 18px 20px;
     box-sizing: border-box;
     border: 0;
     background: #eee;
@@ -87,14 +87,14 @@ input{
 .remoteVideo {
     background: rgb(251, 253, 255);
     height: 100%;
-    width: 45%;
+    width: 100%;
     padding: 12px 0;
 }
 
 .localVideo {
     background: rgb(251, 253, 255);
     height: 100%;
-    width: 45%;
+    width: 100%;
     padding: 12px 0;
 }
 
