@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <title>ARESOFTWARE Video Char</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-    <nav class = "navbar navbar-light bg-warning">
-        <a class="navbar-branch mx-auto" href="/">Adventure</a>
-    </nav>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
+    <div class="container-fluid">
+        <a href="#" class="navbar-brand mr-3">Adventure</a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <a href="#" class="nav-item nav-link active">Home</a>
+                <a href="#" class="nav-item nav-link">Services</a>
+                <a href="#" class="nav-item nav-link">About</a>
+                <a href="#" class="nav-item nav-link">Contact</a>
+            </div>
+            <div class="navbar-nav ml-auto">
+                <a href="#" class="nav-item nav-link">Register</a>
+                <a href="#" class="nav-item nav-link">Login</a>
+            </div>
+        </div>
+    </div>    
+</nav>
 
-    <div>
-      <div class="row"> 
+    <div class="container">
+      <div class="jumbotron"> 
         <div class="col-sm-12">
           <div class="card" style="width: 100%;">
             <div id="chat" class="card-body">
@@ -75,14 +93,14 @@
         </div>
       </div>
       <div class="row"> 
-        <div class="col-sm-12 col-sm-6">
+        <div class="col-sm-6">
           <div class="card" style="width: 100%;">
             <div id="chat" class="card-body">
               <button id='conn_button' class="btn btn-success btn-lg btn-block">Connect</button>
             </div>
           </div>
         </div>
-        <div class="col-sm-12 col-sm-6">
+        <div class="col-sm-6">
           <div class="card" style="width: 100%;">
             <div id="chat" class="card-body">
               <button id='call_button' class="btn btn-danger btn-lg btn-block">Call</button>
@@ -92,7 +110,7 @@
       </div>
 
       <div class="row"> 
-        <div class="col-sm-12 col-sm-6">
+        <div class="col-sm-6">
           <div id="accordion1">
             <div class="card-header" id="headingOne">
               <h5 class="mb-0">
@@ -104,17 +122,17 @@
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
               <div class="card" style="width: 100%;">
                 <div id="chat" class="card-body">
-                  <video width="400" height="240" class="remoteVideo" id="rvideo" autoplay="true"></video>
+                  <video  width="100%" height="100%" id="rvideo" autoplay="true"></video>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-sm-12 col-sm-6">
+        <div class="col-sm-6">
           <div id="accordion2">
             <div class="card-header" id="headingTwo">
               <h5 class="mb-0">
-                <button  class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+                <button class="btn btn-primary btn-lg btn-block" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
                   Local person
                 </button>
               </h5>
@@ -122,7 +140,7 @@
             <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
               <div class="card" style="width: 100%;">
                 <div  class="card-body">
-                  <video width="400" height="240" class="localVideo"  id="lvideo" autoplay="true" muted></video>
+                  <video width="100%" height="100%"   id="lvideo" autoplay="true" muted></video>
                 </div>
               </div>
             </div>
